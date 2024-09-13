@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Upload";
+}
+
+<h2>Upload File</h2>
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <input type="file" name="file" required />
+    <button type="submit">Upload</button>
+}
+
+@if (ViewBag.Message != null)
+{
+    <p>@ViewBag.Message</p>
+}
+
+@if (ViewBag.DownloadUrl != null)
+{
+    <p>Download your file using this link: <a href="@ViewBag.DownloadUrl">@ViewBag.DownloadUrl</a></p>
+}
